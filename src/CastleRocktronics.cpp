@@ -1,4 +1,4 @@
-#include "SwitchedMultiple.hpp"
+#include "SwitchedMultipleWidget.hpp"
 
 // The plugin-wide instance of the Plugin class
 Plugin *plugin;
