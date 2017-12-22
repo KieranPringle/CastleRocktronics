@@ -1,1 +1,6 @@
+#make output
 /build
+*.dylib
+
+#project files
+/.vscode
