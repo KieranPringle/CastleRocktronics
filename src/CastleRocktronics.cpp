@@ -1,3 +1,4 @@
+#include "CrossfaderWidget.hpp"
 #include "SwitchedMultipleWidget.hpp"
 
 // The plugin-wide instance of the Plugin class
@@ -14,8 +15,9 @@ void init(rack::Plugin *p) {
     p->manual = "";
     
     // For each module, specify the ModuleWidget subclass, manufacturer slug (for saving in patches), manufacturer human-readable name, module slug, and module name
-    p->addModel(createModel<SwitchedMultipleWidget>("CastleRocktronics", "CR-V02_SwitchedMultiple", "Switched Multiple", UTILITY_TAG, MULTIPLE_TAG));
-    
+    p->addModel(createModel<SwitchedMultipleWidget>("CastleRocktronics", "CR-V01_SwitchedMultiple", "Switched Multiple", UTILITY_TAG, MULTIPLE_TAG));
+    p->addModel(createModel<CrossfaderWidget>("CastleRocktronics", "CR-V02_Crossfader", "Crossfader", UTILITY_TAG, MIXER_TAG));
+
     // Any other plugin initialization may go here.
     // As an alternative, consider lazy-loading assets and lookup tables when your module is created to reduce startup times of Rack.
 }
