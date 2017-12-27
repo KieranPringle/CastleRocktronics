@@ -1,4 +1,5 @@
 #include "SwitchedMultipleWidget.hpp"
+#include "Components.hpp"
 #include "SwitchedMultiple.hpp"
 
 SwitchedMultipleWidget::SwitchedMultipleWidget() {
@@ -38,8 +39,8 @@ void SwitchedMultipleWidget::placeOutputs(int x, int startingY, int spacing) {
         static_cast<SwitchedMultiple::Outputs>(i);
     int y = startingY + (spacing * 2 * i);
 
-    addOutput(createOutput<PJ3410Port>(Vec(x, y), module, output));
-    addOutput(createOutput<PJ3410Port>(Vec(x, y + spacing), module, output));
+    addOutput(createOutput<MiniJack>(Vec(x, y), module, output));
+    addOutput(createOutput<MiniJack>(Vec(x, y + spacing), module, output));
   }
 };
 
@@ -48,7 +49,7 @@ void SwitchedMultipleWidget::placeInputs(int x, int startingY, int spacing) {
     SwitchedMultiple::Inputs input = static_cast<SwitchedMultiple::Inputs>(i);
     int y = startingY + (spacing * i);
 
-    addInput(createInput<PJ3410Port>(Vec(x, y), module, input));
+    addInput(createInput<MiniJack>(Vec(x, y), module, input));
   }
 };
 

@@ -1,4 +1,5 @@
 #include "CrossfaderWidget.hpp"
+#include "Components.hpp"
 
 CrossfaderWidget::CrossfaderWidget() {
   this->moduleWidth = 8 * RACK_GRID_WIDTH;
@@ -43,16 +44,16 @@ void CrossfaderWidget::placeAudioInputs(int x, int startingY, int spacing) {
     Crossfader::Inputs input = static_cast<Crossfader::Inputs>(i);
     int y = startingY + (spacing * i);
 
-    addInput(createInput<PJ3410Port>(Vec(x, y), module, input));
+    addInput(createInput<MiniJack>(Vec(x, y), module, input));
   }
 }
 
 void CrossfaderWidget::placeOutput(int x, int y) {
-  addOutput(createOutput<PJ3410Port>(Vec(x, y), module, Crossfader::OUTPUT));
+  addOutput(createOutput<MiniJack>(Vec(x, y), module, Crossfader::OUTPUT));
 }
 
 void CrossfaderWidget::placeCvInput(int x, int y) {
-  addInput(createInput<PJ3410Port>(Vec(x, y), module, Crossfader::FADER_CV));
+  addInput(createInput<MiniJack>(Vec(x, y), module, Crossfader::FADER_CV));
 }
 
 void CrossfaderWidget::placeSlider(int x, int y) {
