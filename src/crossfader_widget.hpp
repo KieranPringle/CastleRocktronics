@@ -1,5 +1,5 @@
 #include "rack.hpp"
-#include "Crossfader.hpp"
+#include "crossfader.hpp"
 
 using namespace rack;
 

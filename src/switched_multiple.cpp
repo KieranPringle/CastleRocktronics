@@ -1,4 +1,4 @@
-#include "SwitchedMultiple.hpp"
+#include "switched_multiple.hpp"
 
 void SwitchedMultiple::step() {
   outputs[OUTPUT_1].value = inputs[INPUT_1].value;

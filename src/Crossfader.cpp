@@ -1,4 +1,4 @@
-#include "Crossfader.hpp"
+#include "crossfader.hpp"
 #include "math.hpp"
 
 void Crossfader::step() {

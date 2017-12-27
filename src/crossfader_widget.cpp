@@ -1,5 +1,5 @@
-#include "CrossfaderWidget.hpp"
-#include "Components.hpp"
+#include "crossfader_widget.hpp"
+#include "components.hpp"
 
 CrossfaderWidget::CrossfaderWidget() {
   this->moduleWidth = 8 * RACK_GRID_WIDTH;

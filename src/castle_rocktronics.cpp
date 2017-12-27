@@ -1,5 +1,5 @@
-#include "CrossfaderWidget.hpp"
-#include "SwitchedMultipleWidget.hpp"
+#include "crossfader_widget.hpp"
+#include "switched_multiple_widget.hpp"
 
 // The plugin-wide instance of the Plugin class
 Plugin *plugin;

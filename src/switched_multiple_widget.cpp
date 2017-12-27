@@ -1,6 +1,6 @@
-#include "SwitchedMultipleWidget.hpp"
-#include "Components.hpp"
-#include "SwitchedMultiple.hpp"
+#include "switched_multiple_widget.hpp"
+#include "components.hpp"
+#include "switched_multiple.hpp"
 
 SwitchedMultipleWidget::SwitchedMultipleWidget() {
   this->moduleWidth = 6 * RACK_GRID_WIDTH;
