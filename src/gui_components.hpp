@@ -1,47 +1,44 @@
 #include "rack.hpp"
 
-
 namespace rack {
 
-
-extern NVGcontext *gFramebufferVg;
-
+extern NVGcontext* gFramebufferVg;
 
 struct ShadedKnob : virtual Knob, FramebufferWidget {
-	float minAngle = -2.35619;
-	float maxAngle = 2.35619;
+  float minAngle = -2.35619;
+  float maxAngle = 2.35619;
 
-	TransformWidget* markerTransformWidget;
-	SVGWidget* markerSVGWidget;
+  TransformWidget* markerTransformWidget;
+  SVGWidget* markerSVGWidget;
 
-	SVGWidget* highlightWidget;
+  SVGWidget* highlightWidget;
 
-	TransformWidget* knobTransformWidget;
-	SVGWidget* knobSVGWidget;
+  TransformWidget* knobTransformWidget;
+  SVGWidget* knobSVGWidget;
 
-	CircularShadow* shadowWidget;
-	float shadowBlur = 2.0f;
-	Vec shadowOffset = Vec(-2,2);
+  CircularShadow* shadowWidget;
+  float shadowBlur = 2.0f;
+  Vec shadowOffset = Vec(-2, 2);
 
-	ShadedKnob();
-	void setMarker(std::shared_ptr<SVG> svg);
-	void setHighlight(std::shared_ptr<SVG> svg);
-	void setKnob(std::shared_ptr<SVG> svg);
+  ShadedKnob();
+  void setMarker(std::shared_ptr<SVG> svg);
+  void setHighlight(std::shared_ptr<SVG> svg);
+  void setKnob(std::shared_ptr<SVG> svg);
 
-	void step() override;
-	void onChange(EventChange &e) override;
+  void step() override;
+  void onChange(EventChange& e) override;
 };
 
-}
+}  // namespace rack
 
 using namespace rack;
 
-extern Plugin *plugin;
+extern Plugin* plugin;
 
 struct TenHex : SVGPort {
   TenHex() {
-    background->svg =
-        SVG::load(assetPlugin(plugin, "res/components/ports/10mmHex_black.svg"));
+    background->svg = SVG::load(
+        assetPlugin(plugin, "res/components/ports/10mmHex_black.svg"));
     background->wrap();
     box.size = background->box.size;
   }
@@ -67,25 +64,30 @@ struct SevenHalfKnurled : SVGPort {
 
 struct CastleTrimpot : ShadedKnob {
   CastleTrimpot() {
-		shadowBlur = 1.0f;
-   	shadowOffset = Vec(-1,1);
+    shadowBlur = 1.0f;
+    shadowOffset = Vec(-1, 1);
 
     setKnob(SVG::load(assetPlugin(plugin, "res/components/trimpot/shaft.svg")));
-		setHighlight(SVG::load(assetPlugin(plugin, "res/components/trimpot/highlight.svg")));
-		setMarker(SVG::load(assetPlugin(plugin, "res/components/trimpot/marker.svg")));
+    setHighlight(
+        SVG::load(assetPlugin(plugin, "res/components/trimpot/highlight.svg")));
+    setMarker(
+        SVG::load(assetPlugin(plugin, "res/components/trimpot/marker.svg")));
   }
 };
 
 struct DelvinToggleTwo : SVGSwitch, ToggleSwitch {
-	DelvinToggleTwo() {
-		addFrame(SVG::load(assetPlugin(plugin, "res/components/switches/delvin/2pos_0.svg")));
-		addFrame(SVG::load(assetPlugin(plugin, "res/components/switches/delvin/2pos_1.svg")));
-	}
+  DelvinToggleTwo() {
+    addFrame(SVG::load(
+        assetPlugin(plugin, "res/components/switches/delvin/2pos_0.svg")));
+    addFrame(SVG::load(
+        assetPlugin(plugin, "res/components/switches/delvin/2pos_1.svg")));
+  }
 };
 
 struct MThreeScrew : SVGScrew {
-	MThreeScrew() {
-		sw->setSVG(SVG::load(assetPlugin(plugin, "res/components/screws/screw.svg")));
-		box.size = sw->box.size;
-	}
+  MThreeScrew() {
+    sw->setSVG(
+        SVG::load(assetPlugin(plugin, "res/components/screws/screw.svg")));
+    box.size = sw->box.size;
+  }
 };

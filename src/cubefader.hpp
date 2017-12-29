@@ -9,13 +9,7 @@ struct Cubefader : Module {
   float z_2 = 0.0f;
   float aaFactor = 0.5f;
 
-  enum Params { 
-    X_TRIMPOT, 
-    Y_TRIMPOT, 
-    Z_TRIMPOT,
-    UNI_BI_TOGGLE,
-    NUM_PARAMS
-  };
+  enum Params { X_TRIMPOT, Y_TRIMPOT, Z_TRIMPOT, UNI_BI_TOGGLE, NUM_PARAMS };
 
   enum Inputs {
     INPUT_000,
