@@ -1,5 +1,5 @@
 #include "switched_multiple_widget.hpp"
-#include "components.hpp"
+#include "gui_components.hpp"
 #include "switched_multiple.hpp"
 
 SwitchedMultipleWidget::SwitchedMultipleWidget() {
@@ -39,8 +39,8 @@ void SwitchedMultipleWidget::placeOutputs(int x, int startingY, int spacing) {
         static_cast<SwitchedMultiple::Outputs>(i);
     int y = startingY + (spacing * 2 * i);
 
-    addOutput(createOutput<MiniJack>(Vec(x, y), module, output));
-    addOutput(createOutput<MiniJack>(Vec(x, y + spacing), module, output));
+    addOutput(createOutput<SevenHalfKnurled>(Vec(x, y), module, output));
+    addOutput(createOutput<SevenHalfKnurled>(Vec(x, y + spacing), module, output));
   }
 };
 
@@ -49,7 +49,7 @@ void SwitchedMultipleWidget::placeInputs(int x, int startingY, int spacing) {
     SwitchedMultiple::Inputs input = static_cast<SwitchedMultiple::Inputs>(i);
     int y = startingY + (spacing * i);
 
-    addInput(createInput<MiniJack>(Vec(x, y), module, input));
+    addInput(createInput<SevenHalfKnurled>(Vec(x, y), module, input));
   }
 };
 
