@@ -3,7 +3,7 @@ Cubefader
 
 <img align="right" src="images/cubefader.png">
 
-## Overivew
+## Overview
 
 Cubefader is an 8 input to 1 output crossfader. A simple crossfader takes two inputs, and mixes between them from "left" to "right" allowing a smooth transition between them. Cubefader does the same thing, but instead it also mixes from front to back and top to bottom, allowing you to smoothly transition between 8 inputs.
 
