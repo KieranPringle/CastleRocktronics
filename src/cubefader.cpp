@@ -1,7 +1,5 @@
 #include "cubefader.hpp"
 #include <iostream>
-#include "math.hpp"
-#include "rack.hpp"
 
 void Cubefader::step() {
   float x, y, z, crossFaded;

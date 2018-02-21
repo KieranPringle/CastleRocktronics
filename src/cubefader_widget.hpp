@@ -6,7 +6,7 @@ using namespace rack;
 extern Plugin *plugin;
 
 struct CubefaderWidget : ModuleWidget {
-  CubefaderWidget();
+  CubefaderWidget(Cubefader *module);
 
  private:
   int moduleWidth;
@@ -19,3 +19,5 @@ struct CubefaderWidget : ModuleWidget {
   void placeTrimpots(int x, int y, int horizontalSpacing);
   void placeScrews();
 };
+
+extern Model *modelCubefader;

@@ -1,11 +1,9 @@
 #include "cubefader_widget.hpp"
 #include "gui_components.hpp"
 
-CubefaderWidget::CubefaderWidget() {
+CubefaderWidget::CubefaderWidget(Cubefader *module) : ModuleWidget(module) {
   this->moduleWidth = 12 * RACK_GRID_WIDTH;
 
-  Cubefader *module = new Cubefader();
-  setModule(module);
   box.size = Vec(moduleWidth, RACK_GRID_HEIGHT);
 
   {
@@ -98,3 +96,7 @@ void CubefaderWidget::placeScrews() {
       createScrew<MThreeScrew>(Vec((box.size.x - 2 * RACK_GRID_WIDTH) + 1,
                                    RACK_GRID_HEIGHT - RACK_GRID_WIDTH + 1)));
 }
+
+Model *modelCubefader = Model::create<Cubefader, CubefaderWidget>(
+  "CastleRocktronics", "CR-V01_Cubefader", "Cubefader",
+  UTILITY_TAG, MIXER_TAG);
