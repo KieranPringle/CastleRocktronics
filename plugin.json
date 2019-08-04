@@ -1,0 +1,15 @@
+{
+  "slug": "CastleRocktronics",
+  "name": "CastleRocktronics",
+  "version": "1.0.0",
+  "license": "GPL-3.0-or-later",
+  "brand": "CastleRocktronics",
+  "author": "Kieran Pringle",
+  "authorEmail": "contact@castlerocktronics.com",
+  "authorUrl": "http://www.castlerocktronics.com",
+  "pluginUrl": "http://www.castlerocktronics.com",
+  "manualUrl": "http://www.castlerocktronics.com",
+  "sourceUrl": "https://github.com/KieranPringle/CastleRocktronics",
+  "donateUrl": "",
+  "modules": []
+}
